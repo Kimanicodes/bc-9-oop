@@ -54,6 +54,12 @@ class TestNotesApplication(unittest.TestCase):
         author5.delete(0)
         self.assertNotIn('This is One', author5.list())
 
+    def test_if_edit_works(self):
+        author6 = NotesApplication('Josh')
+        author6.create('This Is Two')
+        author6.edit_id(0, 'This is no Longer note two')
+        self.assertNotEqual('This is Two', author6.notes_list[0])
+
 
 if __name__ == "__main__":
     unittest.main()
