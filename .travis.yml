@@ -4,4 +4,4 @@ python:
   - "3.4"
 # command to run tests
 script:
-  - python Assignment/test_addition.py
+  - python Assignment/test_notes_app.py
