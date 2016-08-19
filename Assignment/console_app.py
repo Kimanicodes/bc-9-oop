@@ -17,8 +17,8 @@ def display_menu():
     q . Quit
     """
 display_menu()
-var = raw_input('\n')
 while True:
+    var = raw_input('\n')
     if int(var) == 1:
         name = raw_input('Enter Author Name:\n')
         name = str(name)
