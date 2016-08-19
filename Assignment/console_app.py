@@ -2,12 +2,22 @@ import os
 from notes_application import NotesApplication
 
 os.system('clear')
+print('====================================================')
+print('====================================================')
+print('======++++WELCOME TO YOUR NOTES APPLICATION+++++====')
+print('====================================================')
+print('====================================================')
+print('===========++++PLAY AROUND WITH IT!++++=============')
+print('====================================================')
+print('====================================================')
+print('==============SELECT YOUR OPTION BELOW==============')
+print('====================================================')
+print('====================================================')
+print('====================================================')
 
 
 def display_menu():
     print """
-    WELCOME TO THE NOTES APPLICATION CONSOLE!
-    CHOOSE OPTION FROM MENU
     1. Enter Author Name
     2. Create a New Note
     3. List all your Notes
@@ -35,19 +45,23 @@ while True:
 
     elif int(var) == 3:
         x.list()
+        display_menu()
 
     elif int(var) == 4:
         get_note = raw_input('Enter Note ID:\n')
         get_note = int(get_note)
-        x.get(get_note)
+        print(x.get(get_note))
+        display_menu()
 
     elif int(var) == 5:
         search_txt = raw_input('What would you like to search')
-        x.search(search_text)
+        x.search(search_txt)
+        display_menu()
 
     elif int(var) == 6:
         delete_note = raw_input('What note do you want to delete')
         x.delete(delete_note)
+        display_menu()
 
     elif str(var) is 'q':
         exit()

@@ -48,6 +48,7 @@ class NotesApplication(object):
                 return "Content Gotten AS: \n" + self.notes_list[a] + "\n"
             else:
                 return None
+        
 
 
     def search(self, search_text):
