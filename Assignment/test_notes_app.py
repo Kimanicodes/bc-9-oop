@@ -42,6 +42,18 @@ class TestNotesApplication(unittest.TestCase):
         res2 = author3.get(0)
         self.assertEqual(type(res2), str)
 
+    def test_if_edit(self):
+        author5 = NotesApplication('Kimani')
+        author5.create('This Is One')
+        author5.edit_id(0, 'This is no Longer note one')
+        self.assertIn('This is no Longer note one', author5.list())
+
+    def test_if_deleted(self):
+        author5 = NotesApplication('Kimani')
+        author5.create('This Is One')
+        author5.delete(0)
+        self.assertNotIn('This is One', author5.list())
+
 
 if __name__ == "__main__":
     unittest.main()
