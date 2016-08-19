@@ -30,9 +30,9 @@ class NotesApplication(object):
                 By Author [author]
         """
         for item in self.notes_list:
-            print "Note ID: " + str(self.notes_list.index(item)) + "\n" + "Our Note Content: " \
+            print ("Note ID: " + str(self.notes_list.index(item)) + "\n" + "Our Note Content: " \
                 + item + "\n\n" + \
-                "By Author: " + self.author
+                "By Author: " + self.author)
         return self.notes_list
 
     def get(self, note_id):
@@ -60,10 +60,10 @@ class NotesApplication(object):
         self.search_text = search_text
         for note in self.notes_list:
             if search_text == note:
-                print "\t\t\t Showing for search" + search_text.upper()
-                print "Note ID:" + str(self.notes_list.index(note)) + "\n"
-                print note
-                print "Author is: " + self.author
+                print ("\t\t\t Showing for search" + search_text.upper())
+                print ("Note ID:" + str(self.notes_list.index(note)) + "\n")
+                print (note)
+                print ("Author is: " + self.author)
 
     def delete(self, note_id):
         """
@@ -75,7 +75,7 @@ class NotesApplication(object):
                 del(self.notes_list[note_id])
                 return "Note Deleted"
         except:
-            print 'NONE'
+            print ('NONE')
 
     def edit_id(self, note_id, new_content):
         """
