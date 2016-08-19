@@ -60,6 +60,13 @@ class TestNotesApplication(unittest.TestCase):
         author6.edit_id(0, 'This is no Longer note two')
         self.assertNotEqual('This is Two', author6.notes_list[0])
 
+    def test_the_delete_function(self):
+        author7 = NotesApplication("Author7")
+        author7.create('This is One')
+        self.assertIn('This is One', author7.list())
+        author7.delete(0)
+        self.assertNotIn('This is One', author7.list())
+
 
 if __name__ == "__main__":
     unittest.main()
