@@ -33,6 +33,7 @@ class NotesApplication(object):
             print "Note ID: " + str(self.notes_list.index(item)) + "\n" + "Our Note Content: " \
                 + item + "\n\n" + \
                 "By Author: " + self.author
+        return self.notes_list
 
     def get(self, note_id):
         """
@@ -45,6 +46,9 @@ class NotesApplication(object):
         for a in range(len(self.notes_list)):
             if self.note_id == a:
                 return "Content Gotten AS: \n" + self.notes_list[a] + "\n"
+            else:
+                return None
+
 
     def search(self, search_text):
         """
@@ -81,8 +85,4 @@ class NotesApplication(object):
         if self.notes_list[note_id]:
             self.notes_list[note_id] = new_content
 
-a = NotesApplication('emmanuel')
-a.create('Note One')
-a.create('Note Two')
-a.create('Note Three')
-a.list()
+
